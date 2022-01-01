@@ -1,0 +1,29 @@
+domain: zthunworks.com
+
+cert:
+  issuer: https://acme-v02.api.letsencrypt.org/directory
+  owner: admin
+
+applications:
+  works:
+    api: zthun/works.api:3.0.1
+  roadblock:
+    web: zthun/roadblock.web:1.0.0
+    api: zthun/roadblock.api:1.0.0
+  terms:
+    web: zthun/terms.web:1.0.0
+  privacy:
+    web: zthun/privacy.web:1.0.0
+  learn:
+    web: zthun/works.client:3.0.1
+
+microservices:
+  apps: zthun/works.apps:3.0.0
+  users: zthun/works.users:3.0.0
+  vault: zthun/works.vault:3.0.0
+  notifications: zthun/works.notifications:3.0.0
+  cookies: zthun/works.cookies:3.0.0
+
+database:
+  vault: vault.database.zthunworks.com
+  users: users.database.zthunworks.com

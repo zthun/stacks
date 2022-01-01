@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-microservice-users
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-microservice-users
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-microservice-users
+      labels:
+        app: {{ .Chart.Name }}-pods-microservice-users
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-microservice-users
+          image: {{ .Values.microservices.users }}
+          ports:
+            - containerPort: 4000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Chart.Name }}-secrets-db-urls
+                  key: database-users-url

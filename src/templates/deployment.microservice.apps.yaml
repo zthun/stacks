@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-microservice-apps
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-microservice-apps
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-microservice-apps
+      labels:
+        app: {{ .Chart.Name }}-pods-microservice-apps
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-microservice-apps
+          image: {{ .Values.microservices.apps }}
+          ports:
+            - containerPort: 4000

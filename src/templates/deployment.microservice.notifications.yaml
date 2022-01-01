@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-microservice-notifications
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-microservice-notifications
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-microservice-notifications
+      labels:
+        app: {{ .Chart.Name }}-pods-microservice-notifications
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-microservice-notifications
+          image: {{ .Values.microservices.notifications }}
+          ports:
+            - containerPort: 4000

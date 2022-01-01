@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-roadblock-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-roadblock-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-roadblock-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-roadblock-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-roadblock-web
+          image: {{ .Values.applications.roadblock.web }}
+          ports:
+            - containerPort: 443
+              hostPort: 443
+            - containerPort: 80
+              hostPort: 80

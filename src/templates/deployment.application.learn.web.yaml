@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-learn-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-learn-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-learn-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-learn-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-learn-web
+          image: {{ .Values.applications.learn.web }}
+          ports:
+            - containerPort: 443
+              hostPort: 443
+            - containerPort: 80
+              hostPort: 80

@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-roadblock-api
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-roadblock-api
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-roadblock-api
+      labels:
+        app: {{ .Chart.Name }}-pods-application-roadblock-api
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-roadblock-api
+          image: {{ .Values.applications.roadblock.api }}
+          ports:
+            - containerPort: 3000

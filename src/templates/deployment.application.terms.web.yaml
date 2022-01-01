@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-terms-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-terms-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-terms-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-terms-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-terms-web
+          image: {{ .Values.applications.terms.web }}
+          ports:
+            - containerPort: 443
+              hostPort: 443
+            - containerPort: 80
+              hostPort: 80

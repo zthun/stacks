@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-microservice-cookies
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-microservice-cookies
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-microservice-cookies
+      labels:
+        app: {{ .Chart.Name }}-pods-microservice-cookies
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-microservice-cookies
+          image: {{ .Values.microservices.cookies }}
+          ports:
+            - containerPort: 4000
