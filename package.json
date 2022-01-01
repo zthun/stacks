@@ -9,8 +9,11 @@
     "type": "git",
     "url": "https://github.com/zthun/stacks"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "helm lint src",
+    "test": "helm lint packages/stacks.k8s",
     "lint": "lint-janitor",
     "prepare": "husky install"
   },
