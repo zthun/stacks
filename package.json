@@ -13,9 +13,12 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "helm lint packages/stacks.k8s",
-    "lint": "lint-janitor",
-    "prepare": "husky install"
+    "test": "yarn deploy --dry-run",
+    "lint": "lint-janitor && helm lint packages/stacks.k8s",
+    "prepare": "husky install",
+    "release": "lerna publish --conventional-commits",
+    "deploy": "helm install zthunworks packages/stacks.k8s -n zthunworks",
+    "redeploy": "helm upgrade zthunworks packages/stacks.k8s -n zthunworks"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
@@ -23,6 +26,6 @@
     "@zthun/lint-janitor": "^11.1.0",
     "@zthun/lint-janitor-config": "^11.1.1",
     "husky": "^7.0.4",
-    "rimraf": "^3.0.2"
+    "lerna": "^4.0.0"
   }
 }
