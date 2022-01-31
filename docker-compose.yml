@@ -2,7 +2,7 @@
 services:
   # Load Balancer (Entry Point)
   local.zthunworks.com:
-    image: zthun/works.proxy:1.0.0
+    image: zthun/works.proxy:latest
     ports:
       - 80:80
       - 443:443
@@ -52,10 +52,10 @@ services:
     image: zthun/works.cookies:latest
   # Databases
   zthunworks-databases:
-    image: mongo:4.2.0
+    image: mongo:5.0.5
   # Utilities
   database.zthunworks.com:
-    image: mongo-express:0.49
+    image: mongo-express:0.54
     depends_on:
       - zthunworks-databases
     environment:
