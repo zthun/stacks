@@ -6,23 +6,23 @@ cert:
 
 applications:
   works:
-    api: zthun/works.api:3.0.1
+    api: zthun/works.api:latest
   roadblock:
-    web: zthun/roadblock.web:1.0.0
-    api: zthun/roadblock.api:1.0.0
+    web: zthun/roadblock.web:latest
+    api: zthun/roadblock.api:latest
   terms:
-    web: zthun/terms.web:1.0.0
+    web: zthun/terms.web:latest
   privacy:
-    web: zthun/privacy.web:1.0.0
+    web: zthun/privacy.web:latest
   learn:
-    web: zthun/works.client:3.0.1
+    web: zthun/works.client:latest
 
 microservices:
-  apps: zthun/works.apps:3.0.0
-  users: zthun/works.users:3.0.0
-  vault: zthun/works.vault:3.0.0
-  notifications: zthun/works.notifications:3.0.0
-  cookies: zthun/works.cookies:3.0.0
+  apps: zthun/works.apps:latest
+  users: zthun/works.users:latest
+  vault: zthun/works.vault:latest
+  notifications: zthun/works.notifications:latest
+  cookies: zthun/works.cookies:latest
 
 database:
   vault: vault.database.zthunworks.com
