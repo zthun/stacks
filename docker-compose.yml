@@ -17,7 +17,7 @@ services:
       - zthunworks-application-roadblock-api
       - zthunworks-microservice-apps
       - zthunworks-microservice-users
-      - zthunworkss-microservice-vault
+      - zthunworks-microservice-vault
       - zthunworks-microservice-notifications
       - zthunworks-microservice-cookies
       - zthunworks-database-users
