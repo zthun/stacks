@@ -17,5 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-application-works-api
           image: {{ .Values.applications.works.api }}
-          ports:
-            - containerPort: 3000

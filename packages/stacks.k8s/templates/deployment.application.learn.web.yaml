@@ -17,8 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-application-learn-web
           image: {{ .Values.applications.learn.web }}
-          ports:
-            - containerPort: 443
-              hostPort: 443
-            - containerPort: 80
-              hostPort: 80

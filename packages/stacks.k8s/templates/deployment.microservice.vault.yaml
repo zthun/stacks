@@ -17,8 +17,6 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-microservice-vault
           image: {{ .Values.microservices.vault }}
-          ports:
-            - containerPort: 4000
           env:
             - name: DATABASE_URL
               valueFrom:

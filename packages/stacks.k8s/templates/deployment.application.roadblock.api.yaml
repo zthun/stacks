@@ -17,5 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-application-roadblock-api
           image: {{ .Values.applications.roadblock.api }}
-          ports:
-            - containerPort: 3000

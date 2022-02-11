@@ -17,8 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-application-privacy-web
           image: {{ .Values.applications.privacy.web }}
-          ports:
-            - containerPort: 443
-              hostPort: 443
-            - containerPort: 80
-              hostPort: 80

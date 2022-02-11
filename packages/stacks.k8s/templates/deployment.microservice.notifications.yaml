@@ -17,5 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-microservice-notifications
           image: {{ .Values.microservices.notifications }}
-          ports:
-            - containerPort: 4000

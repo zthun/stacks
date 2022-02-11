@@ -17,5 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-microservice-apps
           image: {{ .Values.microservices.apps }}
-          ports:
-            - containerPort: 4000

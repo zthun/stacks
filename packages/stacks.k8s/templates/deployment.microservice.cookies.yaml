@@ -17,5 +17,3 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-pods-microservice-cookies
           image: {{ .Values.microservices.cookies }}
-          ports:
-            - containerPort: 4000
