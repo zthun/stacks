@@ -16,9 +16,9 @@
     "test": "yarn deploy --dry-run",
     "lint": "lint-janitor && helm lint packages/stacks.k8s",
     "prepare": "husky install",
-    "release": "lerna publish --conventional-commits",
     "deploy": "helm install zthunworks packages/stacks.k8s -n zthunworks",
-    "redeploy": "helm upgrade zthunworks packages/stacks.k8s -n zthunworks"
+    "redeploy": "helm upgrade zthunworks packages/stacks.k8s -n zthunworks",
+    "down": "helm uninstall zthunworks -n zthunworks"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
