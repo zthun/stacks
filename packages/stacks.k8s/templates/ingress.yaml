@@ -12,6 +12,10 @@ spec:
   tls:
     - hosts:
       - {{ .Values.domain }}
+      - learn.{{ .Values.domain }}
+      - roadblock.{{ .Values.domain }}
+      - terms.{{ .Values.domain }}
+      - privacy.{{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
     - host: {{ .Values.domain }}
