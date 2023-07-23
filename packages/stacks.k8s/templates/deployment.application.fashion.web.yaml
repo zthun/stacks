@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-fashion-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-fashion-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-fashion-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-fashion-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-fashion-web
+          image: {{ .Values.applications.fashion.web }}

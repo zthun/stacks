@@ -5,25 +5,7 @@ cert:
   owner: admin
 
 applications:
-  works:
-    api: zthun/works.api:latest
-  roadblock:
-    web: zthun/roadblock.web:latest
-    api: zthun/roadblock.api:latest
-  terms:
-    web: zthun/terms.web:latest
-  privacy:
-    web: zthun/privacy.web:latest
-  learn:
-    web: zthun/works.client:latest
-
-microservices:
-  apps: zthun/works.apps:latest
-  users: zthun/works.users:latest
-  vault: zthun/works.vault:latest
-  notifications: zthun/works.notifications:latest
-  cookies: zthun/works.cookies:latest
-
-database:
-  vault: vault.database.zthunworks.com
-  users: users.database.zthunworks.com
+  pokedexxi:
+    web: zthun/pokedex-web:latest
+  fashion:
+    web: zthun/fashion-web:latest

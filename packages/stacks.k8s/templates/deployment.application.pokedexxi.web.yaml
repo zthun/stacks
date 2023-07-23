@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-pokedexxi-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-pokedexxi-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-pokedexxi-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-pokedexxi-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-pokedexxi-web
+          image: {{ .Values.applications.pokedexxi.web }}

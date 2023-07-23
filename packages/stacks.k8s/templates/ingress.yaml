@@ -11,95 +11,27 @@ metadata:
 spec:
   tls:
     - hosts:
-      - {{ .Values.domain }}
-      - learn.{{ .Values.domain }}
-      - roadblock.{{ .Values.domain }}
-      - terms.{{ .Values.domain }}
-      - privacy.{{ .Values.domain }}
+      - pokedexxi.{{ .Values.domain }}
+      - fashion.{{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
-    - host: {{ .Values.domain }}
+    - host: pokedexxi.{{ .Values.domain }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Chart.Name }}-services-application-learn-web
+                name: {{ .Chart.Name }}-services-application-pokedexxi-web
                 port:
                   number: 80
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-works-api
-                port:
-                  number: 3000
-    - host: learn.{{ .Values.domain }}
+    - host: fashion.{{ .Values.domain }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Chart.Name }}-services-application-learn-web
+                name: {{ .Chart.Name }}-services-application-fashion-web
                 port:
                   number: 80
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-works-api
-                port:
-                  number: 3000
-    - host: roadblock.{{ .Values.domain }}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-roadblock-web
-                port:
-                  number: 80
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-roadblock-api
-                port:
-                  number: 3000
-    - host: terms.{{ .Values.domain }}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-terms-web
-                port:
-                  number: 80
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-works-api
-                port:
-                  number: 3000
-    - host: privacy.{{ .Values.domain }}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-privacy-web
-                port:
-                  number: 80
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-services-application-works-api
-                port:
-                  number: 3000
