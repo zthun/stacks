@@ -9,56 +9,10 @@ services:
     volumes:
       - ./packages/stacks.proxy/conf.d:/etc/nginx/conf.d
     depends_on:
-      - zthunworks-application-works-api
-      - zthunworks-application-learn-web
-      - zthunworks-application-terms-web
-      - zthunworks-application-privacy-web
-      - zthunworks-application-roadblock-web
-      - zthunworks-application-roadblock-api
-      - zthunworks-microservice-apps
-      - zthunworks-microservice-users
-      - zthunworks-microservice-vault
-      - zthunworks-microservice-notifications
-      - zthunworks-microservice-cookies
-      - zthunworks-database-users
-      - zthunworks-database-vault
+      - zthunworks-application-pokedexxi-web
+      - zthunworks-application-fashion-web
   # Applications
-  zthunworks-application-works-api:
-    image: zthun/works.server:latest
-  zthunworks-application-learn-web:
-    image: zthun/works.client:latest
-  zthunworks-application-privacy-web:
-    image: zthun/privacy.web:latest
-  zthunworks-application-terms-web:
-    image: zthun/terms.web:latest
-  zthunworks-application-roadblock-web:
-    image: zthun/roadblock.web:latest
-  zthunworks-application-roadblock-api:
-    image: zthun/roadblock.api:latest
-  # Microservices
-  zthunworks-services-apps:
-    image: zthun/works.apps:latest
-  zthunworks-services-users:
-    image: zthun/works.users:latest
-    environment:
-      - DATABASE_URL=mongodb://zthunworks-databases:27017
-  zthunworks-services-vault:
-    image: zthun/works.vault:latest
-    environment:
-      - DATABASE_URL=mongodb://zthunworks-databases:27017
-  zthunworks-services-notifications:
-    image: zthun/works.notifications:latest
-  zthunworks-services-cookies:
-    image: zthun/works.cookies:latest
-  # Databases
-  zthunworks-databases:
-    image: mongo:5.0.5
-  # Utilities
-  database.zthunworks.com:
-    image: mongo-express:0.54
-    depends_on:
-      - zthunworks-databases
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=zthunworks-databases
-  smtp.zthunworks.com:
-    image: rnwood/smtp4dev:v3.1
+  zthunworks-application-fashion-web:
+    image: zthun/fashion-web:latest
+  zthunworks-application-pokedexxi-web:
+    image: zthun/pokedex-web:latest
