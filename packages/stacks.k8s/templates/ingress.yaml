@@ -11,18 +11,18 @@ metadata:
 spec:
   tls:
     - hosts:
-      - pokedexxi.{{ .Values.domain }}
+      - pokedexii.{{ .Values.domain }}
       - fashion.{{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
-    - host: pokedexxi.{{ .Values.domain }}
+    - host: pokedexii.{{ .Values.domain }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Chart.Name }}-services-application-pokedexxi-web
+                name: {{ .Chart.Name }}-services-application-pokedexii-web
                 port:
                   number: 80
     - host: fashion.{{ .Values.domain }}

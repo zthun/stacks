@@ -9,10 +9,10 @@ services:
     volumes:
       - ./packages/stacks.proxy/conf.d:/etc/nginx/conf.d
     depends_on:
-      - zthunworks-application-pokedexxi-web
+      - zthunworks-application-pokedexii-web
       - zthunworks-application-fashion-web
   # Applications
   zthunworks-application-fashion-web:
     image: zthun/fashion-web:latest
-  zthunworks-application-pokedexxi-web:
+  zthunworks-application-pokedexii-web:
     image: zthun/pokedex-web:latest
