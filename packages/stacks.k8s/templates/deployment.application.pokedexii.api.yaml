@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}-pods-application-pokedexii-api
-          image: {{ .Values.microservices.users }}
+          image: {{ .Values.applications.pokedexii.api }}
           env:
             - name: DATABASE_URL
               valueFrom:
