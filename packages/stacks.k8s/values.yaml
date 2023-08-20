@@ -7,5 +7,9 @@ cert:
 applications:
   pokedexii:
     web: zthun/pokedex-web:latest
+    api: zthun/pokedex-api:latest
   fashion:
     web: zthun/fashion-web:latest
+
+database:
+  pokedexii: database.pokedexii.zthunworks.com
