@@ -22,5 +22,6 @@ helm install zthunworks-stacks ./packages/stacks.k8s -n zthunworks
 ### Upgrade Installation
 
 ```sh
-helm upgrade zthunworks-stacks ./packages/stacks.k8s -n zthunworks
+# You'll need to store secrets and other information in the ~/.zthunworks/values.yaml file.
+helm upgrade zthunworks-stacks ./packages/stacks.k8s -n zthunworks -f ~/.zthunworks/values.yaml
 ```
