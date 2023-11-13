@@ -25,6 +25,13 @@ spec:
                 name: {{ .Chart.Name }}-services-application-pokedexii-web
                 port:
                   number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-pokedexii-api
+                port:
+                  number: 3000
     - host: fashion.{{ .Values.domain }}
       http:
         paths:
