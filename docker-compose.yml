@@ -2,17 +2,44 @@
 services:
   # Load Balancer (Entry Point)
   local.zthunworks.com:
-    image: zthun/works.proxy:latest
+    image: zthun/helpful-proxy
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./packages/stacks.proxy/conf.d:/etc/nginx/conf.d
+      - ./.config:/.config
     depends_on:
       - zthunworks-application-pokedexii-web
+      - zthunworks-application-pokedexii-api
       - zthunworks-application-fashion-web
+      - zthunworks-application-works-web
+      - zthunworks-application-works-api
   # Applications
   zthunworks-application-fashion-web:
-    image: zthun/fashion-web:latest
+    image: zthun/fashion-web
   zthunworks-application-pokedexii-web:
-    image: zthun/pokedex-web:latest
+    image: zthun/pokedex-web
+  zthunworks-application-pokedexii-api:
+    image: zthun/pokedex-api
+    depends_on:
+      - zthunworks-mongo
+    environment:
+      - DATABASE_URL=mongodb://zthunworks-mongo
+  zthunworks-application-works-web:
+    image: zthun/works-web
+  zthunworks-application-works-api:
+    image: zthun/works-api
+  zthunworks-mongo:
+    image: mongo:5.0
+    volumes:
+      - stacks-mongo-data:/data/db
+  zthunworks-mongo-express:
+    image: mongo-express:0.54
+    ports:
+      - 8081:8081
+    depends_on:
+      - zthunworks-mongo
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=zthunworks-mongo
+volumes:
+  stacks-mongo-data:
