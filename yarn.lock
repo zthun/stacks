@@ -1847,12 +1847,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/stacks.proxy@workspace:packages/stacks.proxy":
-  version: 0.0.0-use.local
-  resolution: "@zthun/stacks.proxy@workspace:packages/stacks.proxy"
-  languageName: unknown
-  linkType: soft
-
 "@zthun/stacks@workspace:.":
   version: 0.0.0-use.local
   resolution: "@zthun/stacks@workspace:."
