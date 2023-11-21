@@ -13,6 +13,7 @@ spec:
     - hosts:
       - pokedexii.{{ .Values.domain }}
       - fashion.{{ .Values.domain }}
+      - {{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
     - host: fashion.{{ .Values.domain }}
