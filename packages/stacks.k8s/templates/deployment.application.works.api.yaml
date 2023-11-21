@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-works-api
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-works-api
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-works-api
+      labels:
+        app: {{ .Chart.Name }}-pods-application-works-api
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-works-api
+          image: {{ .Values.applications.works.api }}

@@ -15,6 +15,16 @@ spec:
       - fashion.{{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
+    - host: fashion.{{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-fashion-web
+                port:
+                  number: 80
     - host: pokedexii.{{ .Values.domain }}
       http:
         paths:
@@ -32,13 +42,20 @@ spec:
                 name: {{ .Chart.Name }}-services-application-pokedexii-api
                 port:
                   number: 3000
-    - host: fashion.{{ .Values.domain }}
+    - host: {{ .Values.domain }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Chart.Name }}-services-application-fashion-web
+                name: {{ .Chart.Name }}-services-application-works-web
                 port:
                   number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-works-api
+                port:
+                  number: 3000
