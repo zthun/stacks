@@ -12,11 +12,14 @@ services:
       - zthunworks-application-pokedexii-web
       - zthunworks-application-pokedexii-api
       - zthunworks-application-fashion-web
+      - zthunworks-application-helpful-web
       - zthunworks-application-works-web
       - zthunworks-application-works-api
   # Applications
   zthunworks-application-fashion-web:
     image: zthun/fashion-web
+  zthunworks-application-helpful-web:
+    image: zthun/helpful-web
   zthunworks-application-pokedexii-web:
     image: zthun/pokedex-web
   zthunworks-application-pokedexii-api:

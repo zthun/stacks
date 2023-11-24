@@ -1,10 +1,15 @@
 module.exports = {
   domains: [
     {
-      name: 'local.zthunworks.com',
+      name: 'helpful.local.zthunworks.com',
       paths: {
-        '/': 'zthunworks-application-works-web:80',
-        '/api': 'zthunworks-application-works-api:3000/api'
+        '/': 'zthunworks-application-helpful-web:80'
+      }
+    },
+    {
+      name: 'fashion.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-fashion-web:80'
       }
     },
     {
@@ -15,9 +20,10 @@ module.exports = {
       }
     },
     {
-      name: 'fashion.local.zthunworks.com',
+      name: 'local.zthunworks.com',
       paths: {
-        '/': 'zthunworks-application-fashion-web:80'
+        '/': 'zthunworks-application-works-web:80',
+        '/api': 'zthunworks-application-works-api:3000/api'
       }
     }
   ]
