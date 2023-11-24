@@ -7,6 +7,8 @@ cert:
 applications:
   fashion:
     web: zthun/fashion-web:latest
+  helpful:
+    web: zthun/helpful-web:latest
   pokedexii:
     web: zthun/pokedex-web:latest
     api: zthun/pokedex-api:latest

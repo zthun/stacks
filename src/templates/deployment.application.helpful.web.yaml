@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-helpful-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-helpful-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-helpful-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-helpful-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-helpful-web
+          image: {{ .Values.applications.works.web }}
