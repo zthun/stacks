@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}-pods-application-helpful-web
-          image: {{ .Values.applications.works.web }}
+          image: {{ .Values.applications.helpful.web }}
