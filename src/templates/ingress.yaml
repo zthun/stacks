@@ -14,6 +14,7 @@ spec:
       - fashion.{{ .Values.domain }}
       - helpful.{{ .Values.domain }}
       - pokedexii.{{ .Values.domain }}
+      - webigail.{{ .Values.domain }}
       - {{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
@@ -54,6 +55,16 @@ spec:
                 name: {{ .Chart.Name }}-services-application-pokedexii-api
                 port:
                   number: 3000
+    - host: webigail.{{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-webigail-web
+                port:
+                  number: 80
     - host: {{ .Values.domain }}
       http:
         paths:
