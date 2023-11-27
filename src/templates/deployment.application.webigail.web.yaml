@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-webigail-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-webigail-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-webigail-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-webigail-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-webigail-web
+          image: {{ .Values.applications.webigail.web }}

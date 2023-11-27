@@ -12,6 +12,8 @@ applications:
   pokedexii:
     web: zthun/pokedex-web:latest
     api: zthun/pokedex-api:latest
+  webigail:
+    web: zthun/webigail-web:latest
   works:
     web: zthun/works-web:latest
     api: zthun/works-api:latest
