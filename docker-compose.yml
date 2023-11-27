@@ -9,10 +9,11 @@ services:
     volumes:
       - ./.config:/.config
     depends_on:
-      - zthunworks-application-pokedexii-web
-      - zthunworks-application-pokedexii-api
       - zthunworks-application-fashion-web
       - zthunworks-application-helpful-web
+      - zthunworks-application-pokedexii-web
+      - zthunworks-application-pokedexii-api
+      - zthunworks-application-webigail-web
       - zthunworks-application-works-web
       - zthunworks-application-works-api
   # Applications
@@ -28,6 +29,8 @@ services:
       - zthunworks-mongo
     environment:
       - DATABASE_URL=mongodb://zthunworks-mongo
+  zthunworks-application-webigail-web:
+    image: zthun/webigail-web
   zthunworks-application-works-web:
     image: zthun/works-web
   zthunworks-application-works-api:

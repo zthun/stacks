@@ -20,6 +20,12 @@ module.exports = {
       }
     },
     {
+      name: 'webigail.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-webigail-web:80'
+      }
+    },
+    {
       name: 'local.zthunworks.com',
       paths: {
         '/': 'zthunworks-application-works-web:80',
