@@ -9,6 +9,8 @@ applications:
     web: zthun/fashion-web:latest
   helpful:
     web: zthun/helpful-web:latest
+  janitor:
+    web: zthun/janitor-web:latest
   pokedexii:
     web: zthun/pokedex-web:latest
     api: zthun/pokedex-api:latest
