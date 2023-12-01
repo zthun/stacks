@@ -11,6 +11,7 @@ metadata:
 spec:
   tls:
     - hosts:
+      - circus.{{ .Values.domain }}
       - fashion.{{ .Values.domain }}
       - helpful.{{ .Values.domain }}
       - janitor.{{ .Values.domain }}
@@ -19,6 +20,16 @@ spec:
       - {{ .Values.domain }}
       secretName: {{ .Chart.Name }}-tls
   rules:
+    - host: circus.{{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-circus-web
+                port:
+                  number: 80
     - host: fashion.{{ .Values.domain }}
       http:
         paths:
