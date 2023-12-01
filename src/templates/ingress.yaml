@@ -27,7 +27,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Chart.Name }}-services-application-circus-web
+                name: {{ .Chart.Name }}-services-application-cirque-web
                 port:
                   number: 80
     - host: fashion.{{ .Values.domain }}
