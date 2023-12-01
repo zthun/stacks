@@ -9,6 +9,7 @@ services:
     volumes:
       - ./.config:/.config
     depends_on:
+      - zthunworks-application-cirque-web
       - zthunworks-application-fashion-web
       - zthunworks-application-helpful-web
       - zthunworks-application-pokedexii-web
@@ -17,6 +18,8 @@ services:
       - zthunworks-application-works-web
       - zthunworks-application-works-api
   # Applications
+  zthunworks-application-cirque-web:
+    image: zthun/cirque-web
   zthunworks-application-fashion-web:
     image: zthun/fashion-web
   zthunworks-application-helpful-web:

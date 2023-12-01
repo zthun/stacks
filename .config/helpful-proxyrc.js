@@ -1,15 +1,21 @@
 module.exports = {
   domains: [
     {
-      name: 'helpful.local.zthunworks.com',
+      name: 'circus.local.zthunworks.com',
       paths: {
-        '/': 'zthunworks-application-helpful-web:80'
+        '/': 'zthunworks-application-cirque-web:80'
       }
     },
     {
       name: 'fashion.local.zthunworks.com',
       paths: {
         '/': 'zthunworks-application-fashion-web:80'
+      }
+    },
+    {
+      name: 'helpful.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-helpful-web:80'
       }
     },
     {
