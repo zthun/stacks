@@ -5,7 +5,7 @@ cert:
   owner: admin
 
 applications:
-  circus:
+  cirque:
     web: zthun/cirque-web:latest
   fashion:
     web: zthun/fashion-web:latest
