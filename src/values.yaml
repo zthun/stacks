@@ -13,6 +13,8 @@ applications:
     web: zthun/helpful-web:latest
   janitor:
     web: zthun/janitor-web:latest
+  lumberjacky:
+    web: zthun/lumberjacky-web:latest
   pokedexii:
     web: zthun/pokedex-web:latest
     api: zthun/pokedex-api:latest

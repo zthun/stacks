@@ -15,6 +15,7 @@ spec:
       - fashion.{{ .Values.domain }}
       - helpful.{{ .Values.domain }}
       - janitor.{{ .Values.domain }}
+      - lumberjacky.{{ .Values.domain }}
       - pokedexii.{{ .Values.domain }}
       - webigail.{{ .Values.domain }}
       - {{ .Values.domain }}
@@ -58,6 +59,16 @@ spec:
             backend:
               service:
                 name: {{ .Chart.Name }}-services-application-janitor-web
+                port:
+                  number: 80
+    - host: lumberjacky.{{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-lumberjacky-web
                 port:
                   number: 80
     - host: pokedexii.{{ .Values.domain }}
