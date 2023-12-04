@@ -19,6 +19,18 @@ module.exports = {
       }
     },
     {
+      name: 'janitor.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-janitor-web:80'
+      }
+    },
+    {
+      name: 'lumberjacky.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-lumberjacky-web:80'
+      }
+    },
+    {
       name: 'pokedexii.local.zthunworks.com',
       paths: {
         '/': 'zthunworks-application-pokedexii-web:80',

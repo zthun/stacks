@@ -12,6 +12,8 @@ services:
       - zthunworks-application-cirque-web
       - zthunworks-application-fashion-web
       - zthunworks-application-helpful-web
+      - zthunworks-application-janitor-web
+      - zthunworks-application-lumberjacky-web
       - zthunworks-application-pokedexii-web
       - zthunworks-application-pokedexii-api
       - zthunworks-application-webigail-web
@@ -24,6 +26,10 @@ services:
     image: zthun/fashion-web
   zthunworks-application-helpful-web:
     image: zthun/helpful-web
+  zthunworks-application-janitor-web:
+    image: zthun/janitor-web
+  zthunworks-application-lumberjacky-web:
+    image: zthun/lumberjacky-web
   zthunworks-application-pokedexii-web:
     image: zthun/pokedex-web
   zthunworks-application-pokedexii-api:
