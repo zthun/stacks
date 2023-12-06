@@ -7,6 +7,8 @@ cert:
 applications:
   cirque:
     web: zthun/cirque-web:latest
+  dalmart:
+    web: zthun/dalmart-web:latest
   fashion:
     web: zthun/fashion-web:latest
   helpful:

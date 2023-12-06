@@ -2,6 +2,26 @@
   "version": "0.2",
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
   "language": "en",
-  "words": ["Bonta", "commitlint", "conventionalcommits", "jetstack", "kubectl", "Kubernetes", "lumberjacky", "microservices", "nginxinc", "pokedex", "pokedexii", "rnwood", "webigail", "yarnpkg", "zthun", "Zthunworks"],
-  "dictionaries": ["en_US"]
+  "words": [
+    "Bonta",
+    "commitlint",
+    "conventionalcommits",
+    "dalmart",
+    "jetstack",
+    "kubectl",
+    "Kubernetes",
+    "lumberjacky",
+    "microservices",
+    "nginxinc",
+    "pokedex",
+    "pokedexii",
+    "rnwood",
+    "webigail",
+    "yarnpkg",
+    "zthun",
+    "Zthunworks"
+  ],
+  "dictionaries": [
+    "en_US"
+  ]
 }
