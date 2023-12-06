@@ -10,6 +10,7 @@ services:
       - ./.config:/.config
     depends_on:
       - zthunworks-application-cirque-web
+      - zthunworks-application-dalmart-web
       - zthunworks-application-fashion-web
       - zthunworks-application-helpful-web
       - zthunworks-application-janitor-web
@@ -22,6 +23,8 @@ services:
   # Applications
   zthunworks-application-cirque-web:
     image: zthun/cirque-web
+  zthunworks-application-dalmart-web:
+    image: zthun/dalmart-web
   zthunworks-application-fashion-web:
     image: zthun/fashion-web
   zthunworks-application-helpful-web:

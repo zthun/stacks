@@ -7,6 +7,12 @@ module.exports = {
       }
     },
     {
+      name: 'dalmart.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-dalmart-web:80'
+      }
+    },
+    {
       name: 'fashion.local.zthunworks.com',
       paths: {
         '/': 'zthunworks-application-fashion-web:80'
