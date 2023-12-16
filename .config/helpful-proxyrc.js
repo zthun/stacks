@@ -7,6 +7,12 @@ module.exports = {
       }
     },
     {
+      name: 'clocks.local.zthunworks.com',
+      paths: {
+        '/': 'zthunworks-application-clocks-web:80'
+      }
+    },
+    {
       name: 'dalmart.local.zthunworks.com',
       paths: {
         '/': 'zthunworks-application-dalmart-web:80'
