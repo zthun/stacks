@@ -12,6 +12,7 @@ spec:
   tls:
     - hosts:
       - circus.{{ .Values.domain }}
+      - clocks.{{ .Values.domain }}
       - dalmart.{{ .Values.domain }}
       - fashion.{{ .Values.domain }}
       - helpful.{{ .Values.domain }}
@@ -30,6 +31,16 @@ spec:
             backend:
               service:
                 name: {{ .Chart.Name }}-services-application-cirque-web
+                port:
+                  number: 80
+    - host: clocks.{{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-services-application-clocks-web
                 port:
                   number: 80
     - host: dalmart.{{ .Values.domain }}

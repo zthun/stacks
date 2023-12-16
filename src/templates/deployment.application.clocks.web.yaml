@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Chart.Name }}-deployments-application-clocks-web
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pods-application-clocks-web
+  template:
+    metadata:
+      name: {{ .Chart.Name }}-pods-application-clocks-web
+      labels:
+        app: {{ .Chart.Name }}-pods-application-clocks-web
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-pods-application-clocks-web
+          image: {{ .Values.applications.clocks.web }}
